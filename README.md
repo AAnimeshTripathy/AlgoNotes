@@ -1,1 +1,3 @@
 # AlgoNotes
+
+venv\Scripts\activate
