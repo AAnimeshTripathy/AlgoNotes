@@ -1,8 +1,9 @@
 from rest_framework import generics
-from .models import Subject, Topic, Note, Todo, Bookmark, Blog
+from .models import Subject, Topic, Note, Todo, Bookmark, Blog, Comment, Tag, NoteTag, BlogTag
 from .serializers import (
     SubjectSerializer, TopicSerializer, NoteSerializer,
-    TodoSerializer, BookmarkSerializer, BlogSerializer
+    TodoSerializer, BookmarkSerializer, BlogSerializer,
+    CommentSerializer, TagSerializer, NoteTagSerializer, BlogTagSerializer
 )
 
 # Subject Views
@@ -58,3 +59,39 @@ class BlogListCreateAPIView(generics.ListCreateAPIView):
 class BlogRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Blog.objects.all()
     serializer_class = BlogSerializer
+
+# Comment Views
+class CommentListCreateAPIView(generics.ListCreateAPIView):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
+
+class CommentRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
+
+# Tag Views
+class TagListCreateAPIView(generics.ListCreateAPIView):
+    queryset = Tag.objects.all()
+    serializer_class = TagSerializer
+
+class TagRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Tag.objects.all()
+    serializer_class = TagSerializer
+
+# NoteTag Views
+class NoteTagListCreateAPIView(generics.ListCreateAPIView):
+    queryset = NoteTag.objects.all()
+    serializer_class = NoteTagSerializer
+
+class NoteTagRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = NoteTag.objects.all()
+    serializer_class = NoteTagSerializer
+
+# BlogTag Views
+class BlogTagListCreateAPIView(generics.ListCreateAPIView):
+    queryset = BlogTag.objects.all()
+    serializer_class = BlogTagSerializer
+
+class BlogTagRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = BlogTag.objects.all()
+    serializer_class = BlogTagSerializer

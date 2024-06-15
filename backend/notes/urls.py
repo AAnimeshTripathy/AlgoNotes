@@ -1,4 +1,3 @@
-
 from django.urls import path
 from . import views
 
@@ -26,4 +25,20 @@ urlpatterns = [
     # URLs for blog posts
     path('blogs/', views.BlogListCreateAPIView.as_view(), name='blog-list'),
     path('blogs/<int:pk>/', views.BlogRetrieveUpdateDestroyAPIView.as_view(), name='blog-detail'),
+
+    # URLs for comments
+    path('comments/', views.CommentListCreateAPIView.as_view(), name='comment-list'),
+    path('comments/<int:pk>/', views.CommentRetrieveUpdateDestroyAPIView.as_view(), name='comment-detail'),
+
+    # URLs for tags
+    path('tags/', views.TagListCreateAPIView.as_view(), name='tag-list'),
+    path('tags/<int:pk>/', views.TagRetrieveUpdateDestroyAPIView.as_view(), name='tag-detail'),
+
+    # URLs for note tags
+    path('notetags/', views.NoteTagListCreateAPIView.as_view(), name='notetag-list'),
+    path('notetags/<int:pk>/', views.NoteTagRetrieveUpdateDestroyAPIView.as_view(), name='notetag-detail'),
+
+    # URLs for blog tags
+    path('blogtags/', views.BlogTagListCreateAPIView.as_view(), name='blogtag-list'),
+    path('blogtags/<int:pk>/', views.BlogTagRetrieveUpdateDestroyAPIView.as_view(), name='blogtag-detail'),
 ]
